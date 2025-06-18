@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informe Semanal – ThinkPaladar</title>
+  <script type="module" src="https://dub01.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #bfd1db;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      width: 60px;
+      background-color: #09578B;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .sidebar-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .sidebar a {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+
+    .sidebar a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .sidebar a.active {
+      border: 2px solid #bb8c53;
+      background-color: #ffffff;
+    }
+
+    .sidebar img {
+      max-width: 60%;
+      max-height: 60%;
+      object-fit: contain;
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    header {
+      background-color: #09578B;
+      padding: 0.5rem 1rem;
+    }
+
+    header a img {
+      height: 30px;
+    }
+
+    tableau-viz {
+      flex: 1;
+      width: 100%;
+      border: none;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar">
+    <div class="sidebar-buttons">
+      <a href="informe_semanal.html" title="Informe Semanal" class="active">
+        <img src="WEEKLY (1).png" alt="Semanal" />
+      </a>
+      <a href="informe_mensual.html" title="Informe Mensual">
+        <img src="MONTHLY (2).png" alt="Mensual" />
+      </a>
+      <a href="ingenieria.html" title="Ingeniería de Menú">
+        <img src="idm (3).png" alt="Ingeniería" />
+      </a>
+      <a href="mercado.html" title="Análisis de Mercado">
+        <img src="mercado (2).png" alt="Mercado" />
+      </a>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="main-content">
+    <header>
+      <a href="index.html">
+        <img src="Recurso 31 (1).png" alt="Volver al portal">
+      </a>
+    </header>
+
+    <tableau-viz
+      src="https://dub01.online.tableau.com/t/thinkpaladar/views/WeeklyBusinessReview/WeeklyBusinessReview"
+      toolbar="bottom"
+      hide-tabs>
+    </tableau-viz>
+  </div>
+
+</body>
+</html>
