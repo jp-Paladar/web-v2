@@ -34,6 +34,20 @@
       height: 60px;
       animation: spin 1s linear infinite;
     }
+    .loader-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-text {
+  margin-top: 1rem;
+  color: #09578B;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
 
     @keyframes spin {
       0% { transform: rotate(0deg); }
@@ -140,14 +154,15 @@
 <body>
 
   <!-- SPINNER DE CARGA -->
-  <div id="loading-screen">
-    <div style="text-align: center;">
+
+  <!-- SPINNER DE CARGA -->
+<div id="loading-screen">
+    <div class="loader-wrapper">
       <div class="spinner"></div>
-      <p style="margin-top: 1rem; color: #09578B; font-size: 1.1rem;">
-        Comprobando sesión de acceso...
-      </p>
+      <p class="loading-text">Comprobando sesión de acceso...</p>
     </div>
   </div>
+  
 
   <!-- API de Tableau -->
   <script type="module" src="https://dub01.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
@@ -185,11 +200,11 @@
       <div class="cards">
         <div class="cards-row">
           <a class="card" href="informe_semanal.html">
-            <img src="WEEKLY (1).png" alt="Informe Semanal">
+            <img src="SEMANAL.png" alt="Informe Semanal">
             <div>Informe Semanal</div>
           </a>
           <a class="card" href="informe_mensual.html">
-            <img src="MONTHLY (2).png" alt="Informe Mensual">
+            <img src="MENSUAL.png" alt="Informe Mensual">
             <div>Informe Mensual</div>
           </a>
           <a class="card" href="ingenieria.html">
